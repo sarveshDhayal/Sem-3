@@ -1,0 +1,149 @@
+.footer {
+  background: #ffffff;
+  border-top: 1px solid #e0e0e0;
+  padding: 50px 20px 30px;
+  margin-top: 80px;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  gap: 60px;
+  flex-wrap: wrap;
+}
+
+.footer-left {
+  flex: 1;
+  min-width: 250px;
+}
+
+.footer-logo h2 {
+  font-size: 28px;
+  font-weight: 800;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 5px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.tagline {
+  color: #7f8c8d;
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+.copyright {
+  color: #95a5a6;
+  font-size: 13px;
+  line-height: 1.6;
+  margin-top: 20px;
+}
+
+.footer-right {
+  display: flex;
+  gap: 60px;
+  flex-wrap: wrap;
+}
+
+.footer-section {
+  min-width: 150px;
+}
+
+.footer-section h3 {
+  font-size: 16px;
+  font-weight: 700;
+  color: #2c3e50;
+  margin-bottom: 20px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-section ul li {
+  margin-bottom: 12px;
+}
+
+.footer-section ul li a {
+  color: #7f8c8d;
+  text-decoration: none;
+  font-size: 14px;
+  transition: color 0.3s ease;
+}
+
+.footer-section ul li a:hover {
+  color: #667eea;
+}
+
+.social-links {
+  display: flex;
+  gap: 15px;
+  margin-top: 15px;
+}
+
+.social-links a {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f8f9fa;
+  border-radius: 50%;
+  color: #7f8c8d;
+  transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+}
+
+.social-links svg {
+  width: 20px;
+  height: 20px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .footer {
+    padding: 40px 20px 20px;
+    margin-top: 60px;
+  }
+
+  .footer-container {
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .footer-right {
+    gap: 40px;
+  }
+
+  .footer-section {
+    min-width: 120px;
+  }
+
+  .footer-logo h2 {
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer-right {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .social-links {
+    justify-content: flex-start;
+  }
+}

@@ -1,0 +1,184 @@
+.bookings-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+.bookings-container h1 {
+  text-align: center;
+  color: #2c3e50;
+  margin-bottom: 40px;
+}
+
+.no-bookings {
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.no-bookings p {
+  color: #7f8c8d;
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+.bookings-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 25px;
+}
+
+.booking-card {
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+}
+
+.booking-image {
+  width: 100%;
+  height: 180px;
+  overflow: hidden;
+}
+
+.booking-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.booking-content {
+  padding: 20px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.booking-status {
+  margin-bottom: 15px;
+}
+
+.status-badge {
+  display: inline-block;
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.status-interested {
+  background-color: #ffeaa7;
+  color: #d63031;
+}
+
+.status-rsvp {
+  background-color: #55efc4;
+  color: #00b894;
+}
+
+.status-cancelled {
+  background-color: #dfe6e9;
+  color: #636e72;
+}
+
+.booking-card h3 {
+  color: #2c3e50;
+  margin-bottom: 10px;
+}
+
+.booking-description {
+  color: #7f8c8d;
+  margin-bottom: 15px;
+  line-height: 1.5;
+}
+
+.booking-details p {
+  margin: 5px 0;
+  color: #555;
+  font-size: 14px;
+}
+
+.booking-actions {
+  margin-top: auto;
+  padding-top: 15px;
+  border-top: 1px solid #eee;
+}
+
+.urgency-badge {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  padding: 8px 16px;
+  border-radius: 25px;
+  font-weight: 700;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  animation: pulse 2s infinite;
+  z-index: 10;
+}
+
+.urgency-today {
+  background: linear-gradient(135deg, #ff416c 0%, #ff4b2b 100%);
+  color: white;
+  animation: pulse-fast 1s infinite;
+}
+
+.urgency-tomorrow {
+  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  color: white;
+}
+
+.urgency-soon {
+  background: linear-gradient(135deg, #ffd89b 0%, #ff6b6b 100%);
+  color: white;
+}
+
+.urgency-upcoming {
+  background: linear-gradient(135deg, #a8edea 0%, #667eea 100%);
+  color: white;
+}
+
+.reminder-text {
+  display: inline-block;
+  margin-left: 10px;
+  padding: 4px 10px;
+  background: #ff416c;
+  color: white;
+  border-radius: 15px;
+  font-size: 12px;
+  font-weight: 600;
+  animation: blink 1.5s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+@keyframes pulse-fast {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 4px 12px rgba(255, 65, 108, 0.5);
+  }
+  50% {
+    transform: scale(1.1);
+    box-shadow: 0 6px 20px rgba(255, 65, 108, 0.8);
+  }
+}
+
+@keyframes blink {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
