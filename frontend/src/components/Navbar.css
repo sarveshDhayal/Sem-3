@@ -129,3 +129,144 @@
   font-weight: 600;
   color: white;
 }
+
+/* Mobile Menu Toggle */
+.navbar-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 28px;
+  cursor: pointer;
+  padding: 5px;
+  z-index: 1001;
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+  .navbar-logo {
+    font-size: 28px;
+  }
+
+  .navbar-menu {
+    gap: 15px;
+  }
+
+  .navbar-menu li a {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar-container {
+    padding: 0 15px;
+  }
+
+  .navbar-logo {
+    font-size: 24px;
+  }
+
+  .navbar-toggle {
+    display: block;
+  }
+
+  .navbar-menu {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 280px;
+    height: 100vh;
+    background: #2c3e50;
+    flex-direction: column;
+    padding: 80px 20px 20px;
+    gap: 0;
+    transition: right 0.3s ease;
+    box-shadow: -2px 0 10px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+    overflow-y: auto;
+  }
+
+  .navbar-menu.active {
+    right: 0;
+  }
+
+  .navbar-menu li {
+    width: 100%;
+    padding: 15px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .navbar-menu li a {
+    display: block;
+    font-size: 16px;
+    padding: 5px 0;
+  }
+
+  .navbar-user {
+    width: 100%;
+    align-items: flex-start;
+    padding: 15px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .profile-link {
+    width: 100%;
+    justify-content: flex-start;
+    margin-bottom: 10px;
+  }
+
+  .bookings-link {
+    width: 100%;
+  }
+
+  .notification-badge {
+    right: auto;
+    left: 100%;
+    margin-left: 5px;
+  }
+
+  /* Mobile Menu Overlay */
+  .navbar-menu.active::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 280px;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: -1;
+  }
+}
+
+@media (max-width: 576px) {
+  .navbar {
+    padding: 12px 0;
+  }
+
+  .navbar-container {
+    padding: 0 10px;
+  }
+
+  .navbar-logo {
+    font-size: 22px;
+  }
+
+  .navbar-menu {
+    width: 100%;
+    right: -100%;
+  }
+
+  .navbar-menu.active {
+    right: 0;
+  }
+
+  .user-avatar-small {
+    width: 32px;
+    height: 32px;
+    font-size: 14px;
+  }
+
+  .user-name-nav {
+    font-size: 14px;
+  }
+}

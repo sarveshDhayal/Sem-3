@@ -9,6 +9,7 @@ const Navbar = () => {
   const { user, logout } = useContext(AuthContext);
   const navigate = useNavigate();
   const [upcomingCount, setUpcomingCount] = useState(0);
+  const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
     if (user) {
@@ -31,20 +32,32 @@ const Navbar = () => {
   const handleLogout = () => {
     logout();
     navigate('/login');
+    setMenuOpen(false);
+  };
+
+  const toggleMenu = () => {
+    setMenuOpen(!menuOpen);
+  };
+
+  const closeMenu = () => {
+    setMenuOpen(false);
   };
 
   return (
     <nav className="navbar">
       <div className="navbar-container">
-        <Link to="/" className="navbar-logo">
+        <Link to="/" className="navbar-logo" onClick={closeMenu}>
           LocalConnect
         </Link>
-        <ul className="navbar-menu">
-          <li><Link to="/">Home</Link></li>
-          <li><Link to="/events">Events</Link></li>
+        <button className="navbar-toggle" onClick={toggleMenu}>
+          {menuOpen ? '✕' : '☰'}
+        </button>
+        <ul className={`navbar-menu ${menuOpen ? 'active' : ''}`}>
+          <li><Link to="/" onClick={closeMenu}>Home</Link></li>
+          <li><Link to="/events" onClick={closeMenu}>Events</Link></li>
           {user && (
             <li>
-              <Link to="/my-bookings" className="bookings-link">
+              <Link to="/my-bookings" className="bookings-link" onClick={closeMenu}>
                 My Bookings
                 {upcomingCount > 0 && (
                   <span className="notification-badge">{upcomingCount}</span>
@@ -55,7 +68,7 @@ const Navbar = () => {
           {user ? (
             <>
               <li>
-                <Link to="/profile" className="profile-link">
+                <Link to="/profile" className="profile-link" onClick={closeMenu}>
                   <div className="user-avatar-small">
                     {user.name.charAt(0).toUpperCase()}
                   </div>
@@ -70,8 +83,8 @@ const Navbar = () => {
             </>
           ) : (
             <>
-              <li><Link to="/login" className="btn btn-primary">Login</Link></li>
-              <li><Link to="/signup" className="btn btn-success">Sign Up</Link></li>
+              <li><Link to="/login" className="btn btn-primary" onClick={closeMenu}>Login</Link></li>
+              <li><Link to="/signup" className="btn btn-success" onClick={closeMenu}>Sign Up</Link></li>
             </>
           )}
         </ul>

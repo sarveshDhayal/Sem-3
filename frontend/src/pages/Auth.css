@@ -47,3 +47,53 @@
 .auth-link a:hover {
   text-decoration: underline;
 }
+
+/* Responsive Design for Auth Pages */
+@media (max-width: 768px) {
+  .auth-container {
+    padding: 15px;
+    min-height: calc(100vh - 70px);
+  }
+
+  .auth-card {
+    padding: 30px 25px;
+    max-width: 100%;
+  }
+
+  .auth-card h2 {
+    font-size: 24px;
+    margin-bottom: 25px;
+  }
+}
+
+@media (max-width: 576px) {
+  .auth-container {
+    padding: 10px;
+    align-items: flex-start;
+    padding-top: 40px;
+  }
+
+  .auth-card {
+    padding: 25px 20px;
+    border-radius: 8px;
+  }
+
+  .auth-card h2 {
+    font-size: 22px;
+    margin-bottom: 20px;
+  }
+
+  .form-group {
+    margin-bottom: 18px;
+  }
+
+  .auth-card .btn {
+    padding: 14px 20px;
+    font-size: 16px;
+  }
+
+  .auth-link {
+    font-size: 14px;
+    margin-top: 15px;
+  }
+}
