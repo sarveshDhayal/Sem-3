@@ -29,6 +29,8 @@ const Home = () => {
       setUpcomingEvents(upcoming);
     } catch (error) {
       console.error('Failed to fetch events:', error);
+      console.error('API URL:', process.env.REACT_APP_API_URL || 'http://localhost:5001');
+      console.error('Error details:', error.message);
     } finally {
       setLoading(false);
     }
